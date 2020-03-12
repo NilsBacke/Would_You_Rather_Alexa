@@ -1,9 +1,75 @@
 {
   "deploy_settings": {
     "default": {
-      "skill_id": "",
+      "skill_id": "amzn1.ask.skill.1fce4a40-23c4-432f-b742-1c5af977a22c",
       "was_cloned": false,
-      "merge": {}
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "db12ec9f609ac602954d27e685310f3b"
+        },
+        "interactionModel": {
+          "de-DE": {
+            "eTag": "6e4c0d341612c32b1a32f2e2c656d2b8"
+          },
+          "en-AU": {
+            "eTag": "ebf3739d59aa8e081389c9be49fc78c2"
+          },
+          "en-GB": {
+            "eTag": "b17582241bb662b8135022dd8b210ec6"
+          },
+          "en-US": {
+            "eTag": "a61965babd57064c8ccd96f56d2da322"
+          },
+          "en-CA": {
+            "eTag": "af1536849a70e6bbed9bea9dd3156f20"
+          },
+          "es-ES": {
+            "eTag": "ef15c8d36c71d1b4b6ec1aeaa455e67c"
+          },
+          "es-US": {
+            "eTag": "642561aaecf53e6d1765074010842c83"
+          },
+          "hi-IN": {
+            "eTag": "3cdd7b5f558c30f87518a7df7136edeb"
+          },
+          "en-IN": {
+            "eTag": "8373c5a5a9201878379e7a0a0ea6f506"
+          },
+          "fr-CA": {
+            "eTag": "5f499b2dd1acb6b9a650ec4a7cf33ba8"
+          },
+          "it-IT": {
+            "eTag": "c197b985488bdad692f400a6a545ede3"
+          },
+          "pt-BR": {
+            "eTag": "6f74f28b89a4d69bb37cf69d7124fd0a"
+          },
+          "es-MX": {
+            "eTag": "44b38ea5712e0d025cf9a6f650a26435"
+          },
+          "ja-JP": {
+            "eTag": "4b33e87ff4824654954fb9be10f87ec0"
+          },
+          "fr-FR": {
+            "eTag": "8f4452b69dcd9dc1473cc15f730d4f8c"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:455170633390:function:ask-custom-Would_You_Rather-default",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "ask-custom-Would_You_Rather-default",
+            "handler": "index.handler",
+            "revisionId": "d5cbef4a-c53e-4578-8bdf-421739895073",
+            "runtime": "nodejs10.x"
+          }
+        ]
+      }
     }
   }
 }

@@ -1,43 +1,59 @@
 {
-    "interactionModel": {
-        "languageModel": {
-            "invocationName": "hello world",
-            "intents": [
-                {
-                    "name": "AMAZON.CancelIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.HelpIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.StopIntent",
-                    "samples": []
-                },
-                {
-                    "name": "HelloWorldIntent",
-                    "slots": [],
-                    "samples": [
-                        "hello",
-                        "how are you",
-                        "say hi world",
-                        "say hi",
-                        "hi",
-                        "say hello world",
-                        "say hello"
-                    ]
-                },
-                {
-                    "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.FallbackIntent",
-                    "samples": []
-                }
-            ],
-            "types": []
-        }
-    }
+	"interactionModel": {
+		"languageModel": {
+			"invocationName": "would you rather",
+			"intents": [
+				{
+					"name": "AMAZON.CancelIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.HelpIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.StopIntent",
+					"samples": []
+				},
+				{
+					"name": "WouldYouRatherIntent",
+					"slots": [],
+					"samples": [
+						"play",
+						"play would you rather",
+						"start",
+						"please start",
+						"ask me a question",
+						"ask me",
+						"would",
+						"play again",
+						"again",
+						"start again",
+						"start over",
+						"do it again",
+						"ask a question"
+					]
+				},
+				{
+					"name": "ChoiceAIntent",
+					"slots": [],
+					"samples": ["a", "choice A", "A", "option A", "the first one", "first"]
+				},
+				{
+					"name": "ChoiceBIntent",
+					"slots": [],
+					"samples": ["b", "choice B", "B", "option B", "the second one", "second", "the last one"]
+				},
+				{
+					"name": "AMAZON.NavigateHomeIntent",
+					"samples": []
+				},
+				{
+					"name": "AMAZON.FallbackIntent",
+					"samples": []
+				}
+			],
+			"types": []
+		}
+	}
 }
