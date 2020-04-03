@@ -1,7 +1,7 @@
 {
 	"interactionModel": {
 		"languageModel": {
-			"invocationName": "would you rather",
+			"invocationName": "game of choices",
 			"intents": [
 				{
 					"name": "AMAZON.CancelIntent",
@@ -16,11 +16,11 @@
 					"samples": []
 				},
 				{
-					"name": "WouldYouRatherIntent",
+					"name": "GameOfChoicesIntent",
 					"slots": [],
 					"samples": [
 						"play",
-						"play would you rather",
+						"play game of choices",
 						"start",
 						"please start",
 						"ask me a question",

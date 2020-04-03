@@ -9,19 +9,19 @@ const LaunchRequestHandler = {
 	},
 	handle(handlerInput) {
 		return askQuestion(handlerInput, true)
-	}
+	},
 }
 
-const WouldYouRatherHandler = {
+const GameOfChoicesHandler = {
 	canHandle(handlerInput) {
 		return (
 			Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
-			Alexa.getIntentName(handlerInput.requestEnvelope) === 'WouldYouRather'
+			Alexa.getIntentName(handlerInput.requestEnvelope) === 'GameOfChoicesIntent'
 		)
 	},
 	handle(handlerInput) {
 		return askQuestion(handlerInput)
-	}
+	},
 }
 
 function askQuestion(handlerInput, welcome) {
@@ -35,13 +35,10 @@ function askQuestion(handlerInput, welcome) {
 
 	if (welcome) {
 		speakOutput =
-			"Welcome to Would you rather. Say 'a' or 'b' to select your answer. Here's your question: " + speakOutput
+			"Welcome to Game of choices. Say 'a' or 'b' to select your answer. Here's your question: " + speakOutput
 	}
 
-	return handlerInput.responseBuilder
-		.speak(speakOutput)
-		.reprompt(speakOutput)
-		.getResponse()
+	return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse()
 }
 
 const ChoiceAIntentHandler = {
@@ -54,11 +51,8 @@ const ChoiceAIntentHandler = {
 	handle(handlerInput) {
 		const speakOutput =
 			currentQuestion.choiceAPercentage + " percent of people agree with you. Say 'again' for another question."
-		return handlerInput.responseBuilder
-			.speak(speakOutput)
-			.reprompt(speakOutput)
-			.getResponse()
-	}
+		return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse()
+	},
 }
 
 const ChoiceBIntentHandler = {
@@ -71,11 +65,8 @@ const ChoiceBIntentHandler = {
 	handle(handlerInput) {
 		const speakOutput =
 			currentQuestion.choiceBPercentage + " percent of people agree with you. Say 'again' for another question."
-		return handlerInput.responseBuilder
-			.speak(speakOutput)
-			.reprompt(speakOutput)
-			.getResponse()
-	}
+		return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse()
+	},
 }
 
 const HelpIntentHandler = {
@@ -88,11 +79,8 @@ const HelpIntentHandler = {
 	handle(handlerInput) {
 		const speakOutput = "Say 'play' to start playing. Say 'cancel' to exit."
 
-		return handlerInput.responseBuilder
-			.speak(speakOutput)
-			.reprompt(speakOutput)
-			.getResponse()
-	}
+		return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse()
+	},
 }
 
 const CancelAndStopIntentHandler = {
@@ -107,7 +95,7 @@ const CancelAndStopIntentHandler = {
 		const speakOutput = "Goodbye! Say 'Alexa, play would you rather' next time you want to play."
 
 		return handlerInput.responseBuilder.speak(speakOutput).getResponse()
-	}
+	},
 }
 /* *
  * FallbackIntent triggers when a customer says something that doesn’t map to any intents in your skill
@@ -124,11 +112,8 @@ const FallbackIntentHandler = {
 	handle(handlerInput) {
 		const speakOutput = "I'm sorry, I didn't understand that. Say 'play' to begin playing."
 
-		return handlerInput.responseBuilder
-			.speak(speakOutput)
-			.reprompt(speakOutput)
-			.getResponse()
-	}
+		return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse()
+	},
 }
 /* *
  * SessionEndedRequest notifies that a session was ended. This handler will be triggered when a currently open
@@ -143,7 +128,7 @@ const SessionEndedRequestHandler = {
 		console.log(`~~~~ Session ended: ${JSON.stringify(handlerInput.requestEnvelope)}`)
 		// Any cleanup logic goes here.
 		return handlerInput.responseBuilder.getResponse() // notice we send an empty response
-	}
+	},
 }
 /* *
  * The intent reflector is used for interaction model testing and debugging.
@@ -164,7 +149,7 @@ const IntentReflectorHandler = {
 				//.reprompt('add a reprompt if you want to keep the session open for the user to respond')
 				.getResponse()
 		)
-	}
+	},
 }
 /**
  * Generic error handling to capture any syntax or routing errors. If you receive an error
@@ -179,11 +164,8 @@ const ErrorHandler = {
 		const speakOutput = "I'm sorry, there was an error. Please try again later."
 		console.log(`~~~~ Error handled: ${JSON.stringify(error)}`)
 
-		return handlerInput.responseBuilder
-			.speak(speakOutput)
-			.reprompt(speakOutput)
-			.getResponse()
-	}
+		return handlerInput.responseBuilder.speak(speakOutput).reprompt(speakOutput).getResponse()
+	},
 }
 
 /**
@@ -194,7 +176,7 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
 	.addRequestHandlers(
 		LaunchRequestHandler,
-		WouldYouRatherHandler,
+		GameOfChoicesHandler,
 		ChoiceAIntentHandler,
 		ChoiceBIntentHandler,
 		HelpIntentHandler,
